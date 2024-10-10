@@ -67,9 +67,13 @@ class ImageConstants {
   static const String neetToppersLogo3 = "assets/images/neetToppersLogo3.png";
   static const String neetToppersLogo4 = "assets/images/neetToppersLogo4.png";
   static const String icProfile = "assets/images/profile.png";
-  static const String rewardLogo = "assets/images/rewardLogo.png";
+  static const String rewardLogo = "assets/images/rewardsLogo.png";
   static const String storeLogo = "assets/images/storeLogo.png";
   static const String studentLogo1 = "assets/images/studentLogo1.png";
   static const String studentLogo2 = "assets/images/studentLogo2.png";
   static const String checkCourseLogo = "assets/images/checkCourseLogo.png";
+  static const String navHomeIcon = "assets/images/navHomeIcon.png";
+  static const String navBatchesIcon = "assets/images/navBatchesIcon.png";
+  static const String navProfileIcon = "assets/images/navProfileIcon.png";
+  static const String navChatIcon = "assets/images/navChatIcon.png";
 }

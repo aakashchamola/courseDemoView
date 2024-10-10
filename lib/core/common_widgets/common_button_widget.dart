@@ -4,35 +4,32 @@ class CommonButtonWidget extends StatelessWidget {
   final String text;
   final Color backgroundColor;
   final Color textColor;
-  final VoidCallback onPressed;
+  final VoidCallback onTap;
   final double width;
   final double height;
-  final OutlinedBorder shape;
 
   const CommonButtonWidget({
     Key? key,
     required this.text,
     required this.backgroundColor,
     required this.textColor,
-    required this.onPressed,
-    this.width = 120, // Default width
-    this.height = 50, // Default height
-    this.shape = const RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(30.0)),
-    ), // Default shape as circular
+    required this.onTap,
+    this.width = 120,
+    this.height = 50,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: width,
-      height: height,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: backgroundColor,
-          shape: shape,
-        ),
-        onPressed: onPressed,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: width,
+        height: height,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+            color: backgroundColor,
+            shape: BoxShape.rectangle,
+            borderRadius: BorderRadius.circular(30)),
         child: Text(
           text,
           style: TextStyle(

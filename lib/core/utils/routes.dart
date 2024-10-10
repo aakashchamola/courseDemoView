@@ -7,5 +7,6 @@ class AppRoutes {
   static const String registerScreen = "/register_screen";
   static const String onBoardingScreen = "/on_boarding_screen";
   static const String otpVerificationScreen = "/otp_verification_screen";
-  static const String homeScreen = "/main_screen";
+  static const String mainScreen = "/main_screen";
+  static const String homeScreen = "/home_screen";
 }

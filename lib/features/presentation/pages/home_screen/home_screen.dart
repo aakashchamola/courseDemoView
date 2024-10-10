@@ -17,7 +17,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  bool isOnlineSelected = true; // By default, Online is selected
+  bool isOnlineSelected = true;
   _HomeScreenState();
   void toggleOnlineOffline(bool isOnline) {
     setState(() {
@@ -42,50 +42,50 @@ class _HomeScreenState extends State<HomeScreen> {
           preferredSize: const Size(double.maxFinite, 70),
           child: MainAppBarWidget(
             onDrawerTap: widget.toggleDrawer,
-            isOnlineSelected: isOnlineSelected, // Pass the selected state
+            isOnlineSelected: isOnlineSelected,
           ),
         ),
         body: SingleChildScrollView(
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  // Online Button
-                  CommonButtonWidget(
-                    text: 'Online',
-                    backgroundColor: isOnlineSelected
-                        ? Color(0xFF272A34) // Dark background when active
-                        : Color(0xFFF0F0F0), // Light background when inactive
-                    textColor: isOnlineSelected
-                        ? Colors.white
-                        : Color(
-                            0xFF484848), // Adjust text color based on selection
-                    onPressed: () =>
-                        toggleOnlineOffline(true), // Trigger Online action
-                    width: 160,
-                    height: 50,
-                  ),
-                  // Offline Button
-                  CommonButtonWidget(
-                    text: 'Offline',
-                    backgroundColor: !isOnlineSelected
-                        ? Color(0xFF272A34) // Dark background when active
-                        : Color(0xFFF0F0F0), // Light background when inactive
-                    textColor: !isOnlineSelected
-                        ? Colors.white
-                        : Color(
-                            0xFF484848), // Adjust text color based on selection
-                    onPressed: () =>
-                        toggleOnlineOffline(false), // Trigger Offline action
-                    width: 160,
-                    height: 50,
-                  ),
-                ],
+              Container(
+                decoration: BoxDecoration(
+                  color: Color(0xFFF0F0F0),
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    CommonButtonWidget(
+                      text: 'Online',
+                      backgroundColor: isOnlineSelected
+                          ? Color(0xFF272A34)
+                          : Color(0xFFF0F0F0),
+                      textColor:
+                          isOnlineSelected ? Colors.white : Color(0xFF484848),
+                      onTap: () => toggleOnlineOffline(true),
+                      width: 160,
+                      height: 50,
+                    ),
+                    CommonButtonWidget(
+                      text: 'Offline',
+                      backgroundColor: !isOnlineSelected
+                          ? Color(0xFF272A34)
+                          : Color(0xFFF0F0F0),
+                      textColor:
+                          !isOnlineSelected ? Colors.white : Color(0xFF484848),
+                      onTap: () => toggleOnlineOffline(false),
+                      width: 160,
+                      height: 50,
+                    ),
+                  ],
+                ),
               ),
               isOnlineSelected
-                  ? OnlineHomeScreenWidget() // Show content when Online is active
-                  : OfflineHomeScreenWidget(),
+                  ? OnlineHomeScreenWidget()
+                  : OnlineHomeScreenWidget(),
             ],
           ),
         ));

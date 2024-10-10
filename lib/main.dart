@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ostello_design/core/config/localization.dart';
 import 'package:ostello_design/core/utils/constants.dart';
 import 'package:ostello_design/core/utils/routes.dart';
 import 'package:ostello_design/features/presentation/pages/home_screen/home_screen.dart';
+import 'package:ostello_design/features/presentation/pages/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,13 +38,14 @@ class _MyAppState extends State<MyApp> {
       // ],
       supportedLocales: const [Locale('en')],
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoutes.homeScreen,
+      initialRoute: AppRoutes.mainScreen,
       routes: _registerRoutes(),
     );
   }
 
   Map<String, WidgetBuilder> _registerRoutes() {
     return <String, WidgetBuilder>{
+      AppRoutes.mainScreen: (context) => MainScreen(),
       AppRoutes.homeScreen: (context) => HomeScreen(toggleDrawer: () {})
     };
   }

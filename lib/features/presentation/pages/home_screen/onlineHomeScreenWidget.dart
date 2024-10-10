@@ -1,59 +1,142 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 // import 'package:ostello_design/core/config/localization.dart';
 import 'package:ostello_design/core/utils/constants.dart';
 
-// This is your main content widget for Online Option Content
 class OnlineHomeScreenWidget extends StatelessWidget {
   const OnlineHomeScreenWidget({super.key});
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding:
-          const EdgeInsets.all(16.0), // General padding for the entire layout
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Section 1: Live Sections and Free Courses buttons
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  buildSectionButton(
-                      // MyLocalizations.of(context)
-                      //     .getString("live_sections_jee"),
-                      "Live Sections Jee",
-                      const Color.fromRGBO(247, 226, 165, 1),
-                      ImageConstants.studentLogo1),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  buildSectionButton(
-                      // MyLocalizations.of(context).getString("free_courses"),
-                      "Free Courses",
-                      const Color.fromRGBO(254, 209, 186, 1),
-                      ImageConstants.studentLogo2),
-                ],
-              ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(10, 16, 10, 16),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                buildSectionButton(
+                    // MyLocalizations.of(context)
+                    //     .getString("live_sections_jee"),
+                    "Live Sections Jee",
+                    const Color.fromRGBO(247, 226, 165, 1),
+                    ImageConstants.studentLogo1),
+                SizedBox(
+                  width: 20,
+                ),
+                buildSectionButton(
+                    // MyLocalizations.of(context).getString("free_courses"),
+                    "Free Courses",
+                    const Color.fromRGBO(254, 209, 186, 1),
+                    ImageConstants.studentLogo2),
+              ],
             ),
           ),
-          SizedBox(height: 20),
-          //Section 2: Navigation Buttons
-          navigationButtonRow(),
-          ToppersSectionWidget(),
-          popularCoursesListingSections(),
-          allCoursesListingSections(),
-        ],
+        ),
+        SizedBox(height: 20),
+        //Section 2: Navigation Buttons
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: navigationButtonRow(),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: ToppersSectionWidget(),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: popularCoursesListingSection(),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: allCoursesListingSection(),
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        inviteGetRewardSection(),
+        SizedBox(
+          height: 55,
+        ),
+      ],
+    );
+  }
+
+  Widget inviteGetRewardSection() {
+    return ElevatedButton(
+      onPressed: () {},
+      style: ElevatedButton.styleFrom(
+        padding: EdgeInsets.zero,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+      ),
+      child: Container(
+        padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
+        color: Color.fromRGBO(255, 237, 237, 1),
+        child: Row(
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Refer & Earn",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "Cashback & Rewards",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w800,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "Invite Your Friends & Get Up \n to ₹500 After Registration",
+                  softWrap: true,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 13,
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Container(
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(10)),
+                    padding: EdgeInsets.fromLTRB(40, 8, 40, 8),
+                    child: Text(
+                      "Invite",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold),
+                    )),
+              ],
+            ),
+            ClipRRect(
+              child: Image.asset(
+                ImageConstants.rewardLogo,
+                height: 200,
+                width: 200,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 
-  Widget allCoursesListingSections() {
+  Widget allCoursesListingSection() {
     return Column(
       children: [
         courseListingHeading("All Courses"),
@@ -98,7 +181,7 @@ class OnlineHomeScreenWidget extends StatelessWidget {
     );
   }
 
-  Widget popularCoursesListingSections() {
+  Widget popularCoursesListingSection() {
     return Column(
       children: [
         courseListingHeading("Popular Courses"),
@@ -289,8 +372,7 @@ class OnlineHomeScreenWidget extends StatelessWidget {
               image,
               height: 90,
               width: 90,
-              fit: BoxFit
-                  .contain, // Ensures the image fills the entire container
+              fit: BoxFit.contain,
             ),
             SizedBox(height: 8),
             Text(
