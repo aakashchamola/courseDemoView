@@ -60,12 +60,16 @@ class AppColors {
 class ImageConstants {
   static const String attendanceLogo = "assets/images/attendanceLogo.png";
   static const String assessmentLogo = "assets/images/assessmentLogo.png";
-  static const String icClassroom = "assets/images/classroomLogo.png";
-  static const String freeCourseLogo = "assets/images/freeCourses.png";
-  static const String neetToppersLogo = "assets/images/neetToppersLogo1.png";
+  static const String icClassroom = "assets/images/classroom.jpg";
+  static const String freeCourseLogo = "assets/images/freeCoursesLogo.png";
+  static const String neetToppersLogo1 = "assets/images/neetToppersLogo1.png";
+  static const String neetToppersLogo2 = "assets/images/neetToppersLogo2.png";
+  static const String neetToppersLogo3 = "assets/images/neetToppersLogo3.png";
+  static const String neetToppersLogo4 = "assets/images/neetToppersLogo4.png";
   static const String icProfile = "assets/images/profile.png";
   static const String rewardLogo = "assets/images/rewardLogo.png";
   static const String storeLogo = "assets/images/storeLogo.png";
   static const String studentLogo1 = "assets/images/studentLogo1.png";
   static const String studentLogo2 = "assets/images/studentLogo2.png";
+  static const String checkCourseLogo = "assets/images/checkCourseLogo.png";
 }

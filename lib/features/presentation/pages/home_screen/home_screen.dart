@@ -45,47 +45,49 @@ class _HomeScreenState extends State<HomeScreen> {
             isOnlineSelected: isOnlineSelected, // Pass the selected state
           ),
         ),
-        body: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                // Online Button
-                CommonButtonWidget(
-                  text: 'Online',
-                  backgroundColor: isOnlineSelected
-                      ? Color(0xFF272A34) // Dark background when active
-                      : Color(0xFFF0F0F0), // Light background when inactive
-                  textColor: isOnlineSelected
-                      ? Colors.white
-                      : Color(
-                          0xFF484848), // Adjust text color based on selection
-                  onPressed: () =>
-                      toggleOnlineOffline(true), // Trigger Online action
-                  width: 160,
-                  height: 50,
-                ),
-                // Offline Button
-                CommonButtonWidget(
-                  text: 'Offline',
-                  backgroundColor: !isOnlineSelected
-                      ? Color(0xFF272A34) // Dark background when active
-                      : Color(0xFFF0F0F0), // Light background when inactive
-                  textColor: !isOnlineSelected
-                      ? Colors.white
-                      : Color(
-                          0xFF484848), // Adjust text color based on selection
-                  onPressed: () =>
-                      toggleOnlineOffline(false), // Trigger Offline action
-                  width: 160,
-                  height: 50,
-                ),
-              ],
-            ),
-            isOnlineSelected
-                ? OnlineHomeScreenWidget() // Show content when Online is active
-                : OfflineHomeScreenWidget(),
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  // Online Button
+                  CommonButtonWidget(
+                    text: 'Online',
+                    backgroundColor: isOnlineSelected
+                        ? Color(0xFF272A34) // Dark background when active
+                        : Color(0xFFF0F0F0), // Light background when inactive
+                    textColor: isOnlineSelected
+                        ? Colors.white
+                        : Color(
+                            0xFF484848), // Adjust text color based on selection
+                    onPressed: () =>
+                        toggleOnlineOffline(true), // Trigger Online action
+                    width: 160,
+                    height: 50,
+                  ),
+                  // Offline Button
+                  CommonButtonWidget(
+                    text: 'Offline',
+                    backgroundColor: !isOnlineSelected
+                        ? Color(0xFF272A34) // Dark background when active
+                        : Color(0xFFF0F0F0), // Light background when inactive
+                    textColor: !isOnlineSelected
+                        ? Colors.white
+                        : Color(
+                            0xFF484848), // Adjust text color based on selection
+                    onPressed: () =>
+                        toggleOnlineOffline(false), // Trigger Offline action
+                    width: 160,
+                    height: 50,
+                  ),
+                ],
+              ),
+              isOnlineSelected
+                  ? OnlineHomeScreenWidget() // Show content when Online is active
+                  : OfflineHomeScreenWidget(),
+            ],
+          ),
         ));
   }
 }
