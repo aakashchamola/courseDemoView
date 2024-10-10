@@ -1,8 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
-// import 'package:ostello_design/core/config/localization.dart';
 import 'package:ostello_design/core/utils/constants.dart';
 
 class OnlineHomeScreenWidget extends StatelessWidget {
@@ -38,7 +34,6 @@ class OnlineHomeScreenWidget extends StatelessWidget {
           ),
         ),
         SizedBox(height: 20),
-        //Section 2: Navigation Buttons
         Padding(
           padding: const EdgeInsets.all(10.0),
           child: navigationButtonRow(),
@@ -174,10 +169,11 @@ class OnlineHomeScreenWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-                child: Text(
-              name,
-              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18),
-            )),
+              child: Text(
+                name,
+                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18),
+              ),
+            ),
             SizedBox(
               height: 10,
             ),
@@ -219,17 +215,16 @@ class OnlineHomeScreenWidget extends StatelessWidget {
                   child: RichText(
                     text: TextSpan(
                       style: TextStyle(
-                        fontSize: 18, // Default font size for the text
-                        color: Colors.black, // Default text color
+                        fontSize: 18,
+                        color: Colors.black,
                       ),
                       children: [
                         TextSpan(
-                          text: '₹ 5000 ', // The discounted price
+                          text: '₹ 5000 ',
                           style: TextStyle(
                             fontWeight: FontWeight.w800,
                             fontSize: 25,
-                            color: Colors
-                                .black, // You can change the color of ₹5000 if needed
+                            color: Colors.black,
                           ),
                         ),
                         TextSpan(
@@ -338,7 +333,6 @@ class OnlineHomeScreenWidget extends StatelessWidget {
     );
   }
 
-  // Function to build a button like "Live Sections on JEE Exams"
   Widget buildSectionButton(String title, Color bgColor, String image) {
     return ElevatedButton(
       onPressed: () {},
@@ -388,7 +382,6 @@ class OnlineHomeScreenWidget extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 8),
-                // Join Button
                 Container(
                   padding: EdgeInsets.symmetric(vertical: 4, horizontal: 12),
                   decoration: BoxDecoration(
@@ -435,7 +428,6 @@ class OnlineHomeScreenWidget extends StatelessWidget {
     );
   }
 
-// widget for navigationButtonCard
   Widget navigationButtonCard(String image, String text, Function onPressed) {
     return ElevatedButton(
       onPressed: () => onPressed(),

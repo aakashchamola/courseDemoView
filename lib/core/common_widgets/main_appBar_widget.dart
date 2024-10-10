@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:ostello_design/core/utils/constants.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:ostello_design/core/common_widgets/common_button_widget.dart';
-// import 'package:ostello_design/core/utils/constants.dart';
 
 class MainAppBarWidget extends StatelessWidget {
   final VoidCallback onDrawerTap;
@@ -24,15 +20,11 @@ class MainAppBarWidget extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  // Profile Picture
                   CircleAvatar(
-                    radius: 25, // Set the radius
-                    backgroundImage: AssetImage(
-                        ImageConstants.icProfile), // Replace with your asset
+                    radius: 25,
+                    backgroundImage: AssetImage(ImageConstants.icProfile),
                   ),
-
                   SizedBox(width: 12),
-                  // Welcome text
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -68,7 +60,6 @@ class MainAppBarWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              // Notification Bell with Badge
               Stack(
                 children: [
                   IconButton(
@@ -77,9 +68,7 @@ class MainAppBarWidget extends StatelessWidget {
                       color: Colors.black,
                       size: 35,
                     ),
-                    onPressed: () {
-                      // Notification button action
-                    },
+                    onPressed: () {},
                   ),
                   Positioned(
                     right: 8,

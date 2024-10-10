@@ -11,7 +11,6 @@ abstract class RestClient {
     dio.interceptors.add(
       InterceptorsWrapper(
         onRequest: (options, handler) async {
-          // Do something before request is sent
           final accessToken = localDataSource.getAccessToken();
           debugPrint(accessToken);
           if (accessToken.isNotEmpty) {
@@ -23,10 +22,10 @@ abstract class RestClient {
           if (response.data is Map && response.data['errorCode'] == "401") {
             throw UnAuthorizedException(response.data['errorMessage']);
           }
-          return handler.next(response); // continue
+          return handler.next(response);
         },
         onError: (DioException e, handler) {
-          return handler.next(e); //continue
+          return handler.next(e);
         },
       ),
     );
