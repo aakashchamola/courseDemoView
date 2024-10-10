@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:ostello_design/core/utils/constants.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 // import 'package:ostello_design/core/common_widgets/common_button_widget.dart';
 // import 'package:ostello_design/core/utils/constants.dart';
@@ -16,7 +17,7 @@ class MainAppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      toolbarHeight: 300,
+      toolbarHeight: 80,
       backgroundColor: Colors.white,
       title: Column(
         children: [
@@ -27,9 +28,9 @@ class MainAppBarWidget extends StatelessWidget {
                 children: [
                   // Profile Picture
                   CircleAvatar(
-                    radius: 20, // Set the radius
+                    radius: 25, // Set the radius
                     backgroundImage: AssetImage(
-                        'assets/images/profile.png'), // Replace with your asset
+                        ImageConstants.icProfile), // Replace with your asset
                   ),
 
                   SizedBox(width: 12),
@@ -43,7 +44,7 @@ class MainAppBarWidget extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: 'Avenir LT Pro',
                             fontWeight: FontWeight.bold,
-                            fontSize: 16,
+                            fontSize: 22,
                             color: Color(0xFF272A34),
                           ),
                           children: [
@@ -61,7 +62,7 @@ class MainAppBarWidget extends StatelessWidget {
                         'Better yourself each day everyday',
                         style: TextStyle(
                           fontFamily: 'Avenir Next LT Pro',
-                          fontSize: 10,
+                          fontSize: 12,
                           color: Color(0xFF484848),
                         ),
                       ),
@@ -73,8 +74,11 @@ class MainAppBarWidget extends StatelessWidget {
               Stack(
                 children: [
                   IconButton(
-                    icon:
-                        Icon(Icons.notifications_outlined, color: Colors.black),
+                    icon: Icon(
+                      Icons.notifications_outlined,
+                      color: Colors.black,
+                      size: 35,
+                    ),
                     onPressed: () {
                       // Notification button action
                     },

@@ -76,4 +76,8 @@ class ImageConstants {
   static const String navBatchesIcon = "assets/images/navBatchesIcon.png";
   static const String navProfileIcon = "assets/images/navProfileIcon.png";
   static const String navChatIcon = "assets/images/navChatIcon.png";
+  static const String aspirantLogo = "assets/images/aspirantLogo.png";
+  static const String batchScheduleLogo = "assets/images/batchScheduleLogo.png";
+  static const String liveLogo = "assets/images/liveLogo.png";
+  static const String syllabusLogo = "assets/images/syllabusLogo.png";
 }

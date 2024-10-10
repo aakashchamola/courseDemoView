@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 // import 'package:ostello_design/core/config/localization.dart';
 import 'package:ostello_design/core/utils/constants.dart';
@@ -145,38 +147,127 @@ class OnlineHomeScreenWidget extends StatelessWidget {
           child: Row(
             children: [
               CourseCardWidget(
-                language: "Hinglish",
-                courseImage: ImageConstants.icClassroom,
-                status: "LIVE",
-                teacherName: "Mr. Sampath",
-                courseDetails: Padding(
-                    padding: EdgeInsets.all(8),
-                    child: Container(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "ARAMBH - NEET DROPPER BATCH",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w700, fontSize: 18),
-                        ))),
-              ),
+                  language: "Hinglish",
+                  courseImage: ImageConstants.icClassroom,
+                  status: "LIVE",
+                  teacherName: "Mr. Sampath",
+                  courseDetails: courseDetails("ARAMBH - NEET DROPPER BATCH")),
               CourseCardWidget(
-                language: "Hinglish",
-                courseImage: ImageConstants.icClassroom,
-                status: "LIVE",
-                teacherName: "Mr. Sampath",
-                courseDetails: Padding(
-                    padding: EdgeInsets.all(8),
-                    child: Container(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "ARAMBH - JEE DROPPER BATCH",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w700, fontSize: 18),
-                        ))),
-              ),
+                  language: "Hinglish",
+                  courseImage: ImageConstants.icClassroom,
+                  status: "LIVE",
+                  teacherName: "Mr. Sampath",
+                  courseDetails: courseDetails("ARAMBH - JEE DROPPER BATCH")),
             ],
           ),
         ),
+      ],
+    );
+  }
+
+  Widget courseDetails(
+    String name,
+  ) {
+    return Padding(
+        padding: EdgeInsets.all(8),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+                child: Text(
+              name,
+              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18),
+            )),
+            SizedBox(
+              height: 10,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        courseLogoDescription(
+                            "Full Syllabus", ImageConstants.syllabusLogo),
+                        courseLogoDescription(
+                            "Live+ Recorded", ImageConstants.liveLogo)
+                      ],
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        courseLogoDescription("For NEET 2025 & 2026 Aspirant",
+                            ImageConstants.aspirantLogo),
+                        courseLogoDescription("Batch starts on 16th Aug",
+                            ImageConstants.batchScheduleLogo)
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: RichText(
+                    text: TextSpan(
+                      style: TextStyle(
+                        fontSize: 18, // Default font size for the text
+                        color: Colors.black, // Default text color
+                      ),
+                      children: [
+                        TextSpan(
+                          text: '₹ 5000 ', // The discounted price
+                          style: TextStyle(
+                            fontWeight: FontWeight.w800,
+                            fontSize: 25,
+                            color: Colors
+                                .black, // You can change the color of ₹5000 if needed
+                          ),
+                        ),
+                        TextSpan(
+                          text: '10000',
+                          style: TextStyle(
+                            decoration: TextDecoration.lineThrough,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 18,
+                            color: Colors.black,
+                          ),
+                        ),
+                        TextSpan(
+                          text: '  50%OFF',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.red,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ));
+  }
+
+  Widget courseLogoDescription(String text, String image) {
+    return Row(
+      children: [
+        ClipRect(
+            child: Image.asset(
+          image,
+          height: 20,
+          width: 20,
+        )),
+        Text(text),
       ],
     );
   }

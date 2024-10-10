@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:ostello_design/core/common_widgets/common_button_widget.dart';
 import 'package:ostello_design/core/common_widgets/main_appBar_widget.dart';
 import 'package:ostello_design/features/presentation/pages/home_screen/offlineHomeScreenWidget.dart';
@@ -48,39 +49,43 @@ class _HomeScreenState extends State<HomeScreen> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  color: Color(0xFFF0F0F0),
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    CommonButtonWidget(
-                      text: 'Online',
-                      backgroundColor: isOnlineSelected
-                          ? Color(0xFF272A34)
-                          : Color(0xFFF0F0F0),
-                      textColor:
-                          isOnlineSelected ? Colors.white : Color(0xFF484848),
-                      onTap: () => toggleOnlineOffline(true),
-                      width: 160,
-                      height: 50,
-                    ),
-                    CommonButtonWidget(
-                      text: 'Offline',
-                      backgroundColor: !isOnlineSelected
-                          ? Color(0xFF272A34)
-                          : Color(0xFFF0F0F0),
-                      textColor:
-                          !isOnlineSelected ? Colors.white : Color(0xFF484848),
-                      onTap: () => toggleOnlineOffline(false),
-                      width: 160,
-                      height: 50,
-                    ),
-                  ],
+              Padding(
+                padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Color(0xFFF0F0F0),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      CommonButtonWidget(
+                        text: 'Online',
+                        backgroundColor: isOnlineSelected
+                            ? Color(0xFF272A34)
+                            : Color(0xFFF0F0F0),
+                        textColor:
+                            isOnlineSelected ? Colors.white : Color(0xFF484848),
+                        onTap: () => toggleOnlineOffline(true),
+                        width: 160,
+                        height: 50,
+                      ),
+                      CommonButtonWidget(
+                        text: 'Offline',
+                        backgroundColor: !isOnlineSelected
+                            ? Color(0xFF272A34)
+                            : Color(0xFFF0F0F0),
+                        textColor: !isOnlineSelected
+                            ? Colors.white
+                            : Color(0xFF484848),
+                        onTap: () => toggleOnlineOffline(false),
+                        width: 160,
+                        height: 50,
+                      ),
+                    ],
+                  ),
                 ),
               ),
               isOnlineSelected
