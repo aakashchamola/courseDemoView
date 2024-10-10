@@ -56,6 +56,10 @@ dependencies:
   dartz: ^0.10.1
   #Local Data bae
   hive_flutter: ^1.1.0
+  #Build Runner
+  build_runner: ^2.4.13
+  #svg package
+  flutter_svg: ^2.0.10+1
 
 dev_dependencies:
   flutter_test:
