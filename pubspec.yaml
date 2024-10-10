@@ -45,19 +45,19 @@ dependencies:
   # Dio for making HTTP calls
   dio: ^5.1.2
   # Local cache
-  shared_preferences: ^2.3.2
+  # shared_preferences: ^2.3.2
   # sqf-Lite
-  sqflite: ^2.4.0
+  # sqflite: ^2.4.0
   # Annotations
-  json_annotation: ^4.5.0
-  # Remote API
-  internet_connection_checker: ^1.0.0+1
-  # Functional programming thingies
+  # json_annotation: ^4.5.0
+  # # Remote API
+  # internet_connection_checker: ^1.0.0+1
+  # # Functional programming thingies
   dartz: ^0.10.1
-  #Local Data bae
-  hive_flutter: ^1.1.0
+  # #Local Data bae
+  # hive_flutter: ^1.1.0
   #Build Runner
-  build_runner: ^2.4.13
+  # build_runner: ^2.4.13
   #svg package
   flutter_svg: ^2.0.10+1
 
@@ -70,7 +70,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^5.0.0
+  # flutter_lints: ^5.0.0 
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
