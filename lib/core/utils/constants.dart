@@ -58,15 +58,14 @@ class AppColors {
 }
 
 class ImageConstants {
-  static const String attendanceLogo = "assets/images/attendanceLogo.svg";
+  static const String attendanceLogo = "assets/images/attendanceLogo.png";
   static const String assessmentLogo = "assets/images/assessmentLogo.png";
-  static const String icClassroom = "assets/images/classroom.jpg";
-  static const String freeCourseLogo = "assets/images/freeCourseLogo.svg";
-  static const String neetToppersLogo = "assets/images/neetToppersLogo.svg";
-  static const String icNotification = "assets/images/notification.svg";
-  static const String icProfile = "assets/images/profile.svg";
-  static const String rewardBottomLogo = "assets/images/rewardBottomLogo.svg";
-  static const String storeLogo = "assets/images/storeLogo.svg";
-  static const String studentLogo1 = "assets/images/student_logo1.svg";
-  static const String studentLogo2 = "assets/images/student_logo2.png";
+  static const String icClassroom = "assets/images/classroomLogo.png";
+  static const String freeCourseLogo = "assets/images/freeCourses.png";
+  static const String neetToppersLogo = "assets/images/neetToppersLogo1.png";
+  static const String icProfile = "assets/images/profile.png";
+  static const String rewardLogo = "assets/images/rewardLogo.png";
+  static const String storeLogo = "assets/images/storeLogo.png";
+  static const String studentLogo1 = "assets/images/studentLogo1.png";
+  static const String studentLogo2 = "assets/images/studentLogo2.png";
 }

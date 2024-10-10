@@ -1,25 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:ostello_design/core/common_widgets/common_button_widget.dart';
+import 'package:flutter_svg/svg.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:ostello_design/core/common_widgets/common_button_widget.dart';
+// import 'package:ostello_design/core/utils/constants.dart';
 
 class MainAppBarWidget extends StatelessWidget {
   final VoidCallback onDrawerTap;
   final bool isOnlineSelected;
-  final VoidCallback onOnlinePressed;
-  final VoidCallback onOfflinePressed;
   const MainAppBarWidget({
     Key? key,
     required this.onDrawerTap,
     required this.isOnlineSelected,
-    required this.onOnlinePressed,
-    required this.onOfflinePressed,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      toolbarHeight: 300,
       backgroundColor: Colors.white,
-      elevation: 0,
       title: Column(
         children: [
           Row(
@@ -28,12 +26,10 @@ class MainAppBarWidget extends StatelessWidget {
               Row(
                 children: [
                   // Profile Picture
-                  ClipOval(
-                    child: SvgPicture.asset(
-                      'assets/profile.svg',
-                      height: 40, // Adjust height/width accordingly
-                      width: 40,
-                    ),
+                  CircleAvatar(
+                    radius: 20, // Set the radius
+                    backgroundImage: AssetImage(
+                        'assets/images/profile.png'), // Replace with your asset
                   ),
 
                   SizedBox(width: 12),
@@ -102,43 +98,7 @@ class MainAppBarWidget extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              // Online Button
-              CommonButtonWidget(
-                text: 'Online',
-                backgroundColor: isOnlineSelected
-                    ? Color(0xFF272A34) // Dark background when active
-                    : Color(0xFFF0F0F0), // Light background when inactive
-                textColor: isOnlineSelected
-                    ? Colors.white
-                    : Color(0xFF484848), // Adjust text color based on selection
-                onPressed: onOnlinePressed, // Trigger Online action
-                width: 160,
-                height: 50,
-              ),
-              // Offline Button
-              CommonButtonWidget(
-                text: 'Offline',
-                backgroundColor: !isOnlineSelected
-                    ? Color(0xFF272A34) // Dark background when active
-                    : Color(0xFFF0F0F0), // Light background when inactive
-                textColor: !isOnlineSelected
-                    ? Colors.white
-                    : Color(0xFF484848), // Adjust text color based on selection
-                onPressed: onOfflinePressed, // Trigger Offline action
-                width: 160,
-                height: 50,
-              ),
-            ],
-          ),
         ],
-      ),
-      leading: IconButton(
-        icon: Icon(Icons.menu, color: Colors.black),
-        onPressed: onDrawerTap, // Drawer toggle action
       ),
     );
   }
