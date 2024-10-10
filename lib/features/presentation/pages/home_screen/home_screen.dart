@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:ostello_design/core/common_widgets/common_button_widget.dart';
 import 'package:ostello_design/core/common_widgets/main_appBar_widget.dart';
-import 'package:ostello_design/features/presentation/pages/home_screen/offlineHomeScreenWidget.dart';
 import 'package:ostello_design/features/presentation/pages/home_screen/onlineHomeScreenWidget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -43,7 +42,6 @@ class _HomeScreenState extends State<HomeScreen> {
           preferredSize: const Size(double.maxFinite, 70),
           child: MainAppBarWidget(
             onDrawerTap: widget.toggleDrawer,
-            isOnlineSelected: isOnlineSelected,
           ),
         ),
         body: SingleChildScrollView(

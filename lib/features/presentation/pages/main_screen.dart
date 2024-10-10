@@ -107,9 +107,15 @@ class _MainScreenState extends State<MainScreen> {
         HomeScreen(
           toggleDrawer: () {},
         ), // Your home screen widget
-        BatchesScreen(), // Your batches screen widget
-        ChatScreen(), // Your chat screen widget
-        ProfileScreen(), // Your profile screen widget
+        BatchesScreen(
+          toggleDrawer: () {},
+        ), // Your batches screen widget
+        ChatScreen(
+          toggleDrawer: () {},
+        ), // Your chat screen widget
+        ProfileScreen(
+          toggleDrawer: () {},
+        ), // Your profile screen widget
       ],
     );
   }

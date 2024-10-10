@@ -7,11 +7,9 @@ import 'package:ostello_design/core/utils/constants.dart';
 
 class MainAppBarWidget extends StatelessWidget {
   final VoidCallback onDrawerTap;
-  final bool isOnlineSelected;
   const MainAppBarWidget({
     Key? key,
     required this.onDrawerTap,
-    required this.isOnlineSelected,
   }) : super(key: key);
 
   @override
