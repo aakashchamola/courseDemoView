@@ -94,7 +94,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget _getBody() {
     return PageView(
       controller: _pageController,
-      physics: const NeverScrollableScrollPhysics(),
+      physics: const AlwaysScrollableScrollPhysics(),
       onPageChanged: (pageIndex) => setState(() => _selectedIndex = pageIndex),
       children: [
         HomeScreen(
